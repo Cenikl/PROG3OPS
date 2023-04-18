@@ -6,12 +6,12 @@ Resources:
   BucketS3Arn:
     Type: 'AWS::SSM::Parameter'
     Properties:
-      Name: bucketArn
+      Name: bucketarn
       Type: String
       Value: !GetAtt MyBucket.Arn
   BucketS3Name:
     Type: 'AWS::SSM::Parameter'
     Properties:
-      Name: bucketName
+      Name: bucketname
       Type: String
       Value: !Ref MyBucket
