@@ -41,5 +41,5 @@ jobs:
         run: aws cloudformation validate-template --template-body file://${{ github.workspace }}/STD21036.yml
           
       - name: Deploy template to Aws
-        run: aws cloudformation deploy --template-file STD21036.yml --stack-name stack-test-two
+        run: aws cloudformation deploy --template-file STD21036.yml --stack-name stack-test-three
 
