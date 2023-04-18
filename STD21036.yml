@@ -1,17 +1,17 @@
 Resources:
-  MyBucket:
+  ThisIsAUniqueBucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: bucket
+      BucketName: cedricuniquename
   BucketS3Arn:
     Type: 'AWS::SSM::Parameter'
     Properties:
-      Name: bucketarn
+      Name: bucketuniquearn
       Type: String
-      Value: !GetAtt MyBucket.Arn
+      Value: !GetAtt ThisIsAUniqueBucket.Arn
   BucketS3Name:
     Type: 'AWS::SSM::Parameter'
     Properties:
-      Name: bucketname
+      Name: bucketuniquename
       Type: String
-      Value: !Ref MyBucket
+      Value: !Ref ThisIsAUniqueBucket
