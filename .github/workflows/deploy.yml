@@ -38,5 +38,5 @@ jobs:
           aws-region: us-east-1
           
       - name: Deploy template to Aws
-        run: aws cloudformation deploy --template-file STD21036.yml --stack-name NewStack --capabilities CAPABILITY_IAM
+        run: aws cloudformation deploy --template-file STD21036.yml --stack-name my-stack-name
 
