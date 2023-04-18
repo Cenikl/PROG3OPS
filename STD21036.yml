@@ -1,0 +1,56 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    cb935b0b-e4cf-4e62-bd83-d304f03012fe:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 237
+        'y': 126
+      z: 0
+      embeds: []
+    5f958d32-80da-4df9-aaed-e26cbcb858f7:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 443.69784788582297
+        'y': 122.17808870543313
+      z: 0
+      embeds: []
+    bb556ab8-0411-499b-a9e3-1556f7bd2d1b:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 330
+        'y': 210
+      z: 0
+      embeds: []
+Resources:
+  MyBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: STD21036
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: cb935b0b-e4cf-4e62-bd83-d304f03012fe
+  BucketS3Arn:
+    Type: 'AWS::SSM::Parameter'
+    Properties:
+      Name: bucketArn
+      Type: String
+      Value: !GetAtt Mybucket.Arn
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 5f958d32-80da-4df9-aaed-e26cbcb858f7
+  BucketS3Name:
+    Type: 'AWS::SSM::Parameter'
+    Properties:
+      Name: bucketName
+      Type: String
+      Value: !Ref Mybucket
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: bb556ab8-0411-499b-a9e3-1556f7bd2d1b
