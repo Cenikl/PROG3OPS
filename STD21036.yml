@@ -29,7 +29,7 @@ Metadata:
       z: 0
       embeds: []
 Resources:
-  MyBucket:
+  Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
       BucketName: STD21036
@@ -41,7 +41,7 @@ Resources:
     Properties:
       Name: bucketArn
       Type: String
-      Value: !GetAtt Mybucket.Arn
+      Value: !GetAtt Bucket.Arn
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 5f958d32-80da-4df9-aaed-e26cbcb858f7
@@ -50,7 +50,7 @@ Resources:
     Properties:
       Name: bucketName
       Type: String
-      Value: !Ref Mybucket
+      Value: !Ref Bucket
     Metadata:
       'AWS::CloudFormation::Designer':
         id: bb556ab8-0411-499b-a9e3-1556f7bd2d1b
