@@ -32,7 +32,7 @@ Resources:
   Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: STD21036
+      BucketName: test
     Metadata:
       'AWS::CloudFormation::Designer':
         id: cb935b0b-e4cf-4e62-bd83-d304f03012fe
@@ -41,7 +41,7 @@ Resources:
     Properties:
       Name: bucketArn
       Type: String
-      Value: !GetAtt Bucket.Arn
+      Value: !GetAtt test.Arn
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 5f958d32-80da-4df9-aaed-e26cbcb858f7
@@ -50,7 +50,7 @@ Resources:
     Properties:
       Name: bucketName
       Type: String
-      Value: !Ref Bucket
+      Value: !Ref test
     Metadata:
       'AWS::CloudFormation::Designer':
         id: bb556ab8-0411-499b-a9e3-1556f7bd2d1b
