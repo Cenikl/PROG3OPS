@@ -28,6 +28,16 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+        
+      # Install AWS ClI for the next steps
+      - name: Install AWS ClI
+        uses: unfor19/install-aws-cli-action@v1
+        with:
+          version: 2
+          verbose: false
+          arch: amd64
+          rootdir: ""
+          workdir: ""
 
       # Deploy template yaml to Aws CloudFormation    
       - name: Configure AWS credentials
@@ -37,9 +47,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       
+      # Check the template if it is valid or not
       - name: Validate CloudFormation template
         run: aws cloudformation validate-template --template-body file://${{ github.workspace }}/STD21036.yml
           
+      # Deploy the template to Aws Cloudformation
       - name: Deploy template to Aws
         run: aws cloudformation deploy --template-file STD21036.yml --stack-name stack-test-three
 
