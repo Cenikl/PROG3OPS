@@ -2,7 +2,6 @@ Resources:
   PostgresRDS:
     Type: 'AWS::RDS::DBInstance'
     Properties:
-      DBName: "DBpostgres"
       DBInstanceClass: db.t2.micro
       Engine: postgres
       MasterUsername: !Sub "{{resolve:ssm:masterusername}}"
