@@ -55,3 +55,4 @@ jobs:
       - name: Deploy template to Aws
         run: aws cloudformation deploy --template-file TD2.yml --stack-name newstackdatabase
 
+
