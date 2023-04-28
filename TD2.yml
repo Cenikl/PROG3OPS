@@ -5,7 +5,8 @@ Parameters:
     Value: uniquedatabase
 Resources:
   PostgresRDS:
-    Type: 'AWS::RDS::DBInstance'
+    Type: AWS::RDS::DBInstance
+    DeletionPolicy: Retain
     Properties:
       DBName: !Ref DBName
       DBInstanceClass: db.t2.micro
