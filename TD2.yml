@@ -1,8 +1,13 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  DBName:
+    Type: String
+    Value: uniquedatabase
 Resources:
   PostgresRDS:
     Type: 'AWS::RDS::DBInstance'
     Properties:
-      DBName: database
+      DBName: !Ref DBName
       DBInstanceClass: db.t2.micro
       Engine: postgres
       MasterUsername: !Sub "{{resolve:ssm:masterusername}}"

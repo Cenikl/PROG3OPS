@@ -1,14 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deploy
+name: DeployDatabase
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ "TD2" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "TD2" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -49,9 +49,9 @@ jobs:
       
       # Check the template if it is valid or not
       - name: Validate CloudFormation template
-        run: aws cloudformation validate-template --template-body file://${{ github.workspace }}/STD21036.yml
+        run: aws cloudformation validate-template --template-body file://${{ github.workspace }}/TD2.yml
           
       # Deploy the template to Aws Cloudformation
       - name: Deploy template to Aws
-        run: aws cloudformation deploy --template-file STD21036.yml --stack-name stack-test-three
+        run: aws cloudformation deploy --template-file TD2.yml --stack-name newstackdatabase
 
