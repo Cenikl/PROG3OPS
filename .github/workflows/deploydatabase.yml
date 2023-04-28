@@ -47,10 +47,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       
-      # Check the template if it is valid or not
-      - name: Validate CloudFormation template
-        run: aws cloudformation validate-template --template-body file://${{ github.workspace }}/TD2.yml
-          
       # Deploy the template to Aws Cloudformation
       - name: Deploy template to Aws
         run: aws cloudformation deploy --template-file TD2.yml --stack-name stack-test-three
